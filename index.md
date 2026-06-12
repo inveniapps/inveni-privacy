@@ -6,7 +6,7 @@
 
 ## 1. Who we are
 
-Inveni - Memory Game is independently developed by [your name], with no
+Inveni - Memory Game is independently developed by Reiner Moraes, with no
 commercial purpose beyond the optional support described below.
 
 ## 2. Data collected
@@ -58,7 +58,7 @@ and the revision date will be changed prior to publishing the new version.
 
 ## 8. Contact
 
-Questions? Get in touch: **[your email]**
+Questions? Get in touch: inveniapps@gmail.com
 
 ---
 
@@ -70,7 +70,7 @@ Questions? Get in touch: **[your email]**
 
 ## 1. Quem somos
 
-Inveni - Jogo da Memória é desenvolvido de forma independente por [seu nome],
+Inveni - Jogo da Memória é desenvolvido de forma independente por Reiner Moraes,
 sem fins comerciais além do apoio voluntário descrito abaixo.
 
 ## 2. Dados coletados
@@ -124,4 +124,4 @@ atualizada e a data de revisão será alterada antes da publicação da nova ver
 
 ## 8. Contato
 
-Dúvidas? Entre em contato: **[seu e-mail]**
+Dúvidas? Entre em contato: inveniapps@gmail.com
