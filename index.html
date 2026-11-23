@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Inveni: Memory Game</title>
-<meta name="description" content="Inveni does not collect, store, or share any personal data. Ever.">
+<meta name="description" content="Inveni does not collect, store, or share any personal data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
@@ -17,8 +17,6 @@
     --texto: #3A2E20;
     --texto-suave: #6B5C4A;
     --borda: #E6DCC5;
-    --azul: #1E88E5;
-    --laranja: #F57C00;
   }
 
   * { box-sizing: border-box; }
@@ -40,7 +38,6 @@
     padding: 40px 24px 80px;
   }
 
-  /* ---- Cabeçalho ---- */
   header {
     text-align: center;
     margin-bottom: 32px;
@@ -60,12 +57,16 @@
     margin: 0;
   }
 
-  /* ---- Seletor de idioma ---- */
+  /* ---- Seletor de idioma (segmentado: o estado atual fica sempre visível) ---- */
   .idiomas {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin: 28px 0 40px;
+    margin: 28px auto 40px;
+    width: max-content;
+    border: 1.5px solid var(--borda);
+    border-radius: 999px;
+    padding: 3px;
+    background: var(--superficie);
   }
 
   .idiomas button {
@@ -74,32 +75,42 @@
     font-weight: 600;
     color: var(--roxo);
     background: transparent;
-    border: 1.5px solid var(--borda);
+    border: 0;
     border-radius: 999px;
     padding: 9px 22px;
+    min-height: 44px;
     cursor: pointer;
-    transition: background .18s, color .18s, border-color .18s;
+    transition: background .18s, color .18s;
   }
 
-  .idiomas button:hover {
-    border-color: var(--roxo-claro);
-  }
+  .idiomas button:hover { background: #F3ECFA; }
 
   .idiomas button[aria-pressed="true"] {
     background: var(--roxo);
-    border-color: var(--roxo);
     color: #fff;
   }
 
-  /* ---- Conteúdo ---- */
+  .idiomas button:focus-visible {
+    outline: 3px solid var(--roxo-claro);
+    outline-offset: 2px;
+  }
+
+  .titulo-doc {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 6px;
+  }
+
   .resumo {
     background: var(--superficie);
     border: 1px solid var(--borda);
     border-radius: 16px;
     padding: 18px 22px;
     margin-bottom: 36px;
-    font-weight: 600;
   }
+
+  .resumo p:first-child { font-weight: 800; }
+  .resumo ul { margin-bottom: 0; }
 
   h2 {
     font-size: 21px;
@@ -152,7 +163,7 @@
 
   @media (max-width: 520px) {
     body { font-size: 16px; }
-    .wrap { padding: 28px 18px 60px; }
+    .wrap { padding: 28px 16px 60px; }
     .marca { font-size: 29px; }
     h2 { font-size: 19px; }
   }
@@ -173,158 +184,222 @@
         <text x="331" y="305" font-family="Nunito, Arial, sans-serif" font-size="146" font-weight="800" fill="#fff" text-anchor="middle">?</text>
       </g>
     </svg>
-    <h1 class="marca">Inveni</h1>
+    <p class="marca">Inveni</p>
     <p class="subtitulo" data-en="Memory game" data-pt="Jogo da memória">Memory game</p>
   </header>
 
-  <nav class="idiomas">
-    <button type="button" id="btn-en" aria-pressed="true">English</button>
-    <button type="button" id="btn-pt" aria-pressed="false">Português</button>
+  <nav class="idiomas" aria-label="Language / Idioma">
+    <button type="button" id="btn-en" lang="en" aria-pressed="true">English</button>
+    <button type="button" id="btn-pt" lang="pt-BR" aria-pressed="false">Português</button>
   </nav>
 
   <!-- ============ ENGLISH ============ -->
-  <main id="doc-en">
-    <h1 style="font-size:26px;font-weight:800;margin:0 0 6px;">Privacy Policy</h1>
-    <p class="data">Last updated: July 2026</p>
+  <main id="doc-en" lang="en">
+    <h1 class="titulo-doc">Privacy Policy</h1>
+    <p class="data">Last updated: November 23, 2026</p>
 
     <div class="resumo">
-      Inveni does not collect, store, or share any personal data. Ever.
+      <p>Inveni does not collect, store, or share any personal data.</p>
+      <ul>
+        <li>No accounts, no ads, no analytics, no tracking.</li>
+        <li>Photos in custom decks stay on your device and are not sent to cloud backups.</li>
+        <li>The purchase and every link out of the app sit behind a grown-ups check.</li>
+      </ul>
     </div>
 
     <h2><span class="num">1.</span>Who we are</h2>
-    <p>Inveni — Memory Game is independently developed by <strong>Inveni Apps</strong>, with no
-    commercial purpose beyond the optional support described below.</p>
+    <p>Inveni — Memory Game is developed by <strong>Inveni Apps</strong>. The game is free,
+    has no ads, and is supported only by the optional purchase described in section&nbsp;5.</p>
 
     <h2><span class="num">2.</span>Data collected</h2>
-    <p>This app <strong>collects no personal data</strong> from any user, including
-    children. Specifically:</p>
+    <p>The app <strong>collects no personal data</strong> from anyone, including children:</p>
     <ul>
-      <li>We do not create user accounts.</li>
+      <li>There are no user accounts.</li>
       <li>We do not collect names, email addresses, location, age, or any other personal information.</li>
-      <li>We do not access the camera, microphone, or contacts.</li>
-      <li>We do not use cookies, analytics, tracking SDKs, or advertising.</li>
-      <li>We do not send any data to external servers.</li>
+      <li>The app has no advertising, analytics, or tracking tools.</li>
+      <li>The app sends nothing to us. We have no servers.</li>
     </ul>
-    <p>Photos added to custom decks are stored <strong>only on the user's device</strong>,
-    in the app's private storage, and are permanently deleted when the app is
-    uninstalled. These photos never leave the device.</p>
 
-    <h2><span class="num">3.</span>Settings saved on your device</h2>
-    <p>To remember how you like to play, the app stores a few preferences in its own
-    private storage on the device: chosen language, light or dark mode, color palette,
-    card back design, sound on or off, and the last difficulty and game mode selected.
-    These are simple settings, contain no personal information, are never transmitted
-    anywhere, and are deleted when the app is uninstalled.</p>
+    <h2><span class="num">3.</span>Photos in custom decks</h2>
+    <p>You can make card decks from your own photos. This is how it works:</p>
+    <ul>
+      <li>Photos are chosen with Android's <strong>system photo picker</strong>. The app only
+      receives the photos you pick and has no permission to browse your gallery.</li>
+      <li>Each photo is cropped into a square and saved as a copy in the app's
+      <strong>private storage</strong> on the device. Other apps cannot read it.</li>
+      <li>Photos are <strong>not sent to us</strong> and are <strong>not included</strong> in
+      Android's automatic backup to your Google account.</li>
+      <li>The one exception: if you move your data to a new phone with Android's
+      <strong>direct device-to-device transfer</strong> (cable or local connection), your decks
+      go with it, so you don't lose them. Nothing passes through the internet or through us.</li>
+      <li>Photos are deleted when you remove them from the deck, delete the deck, clear the
+      app's data, or uninstall the app.</li>
+    </ul>
 
-    <h2><span class="num">4.</span>In-app purchases</h2>
-    <p>The app offers an optional one-time purchase ("Support the project") processed
-    exclusively through <strong>Google Play Billing</strong>. It removes the support bar
-    from the menu and unlocks additional color palettes and card back designs — purely
-    cosmetic items. No part of the game itself is locked behind it.</p>
-    <p>No payment data passes through the app — everything is handled by Google Play
-    itself. We have no access to card details, account information, or the buyer's
-    identity. The app only asks Google Play whether this purchase exists, so it knows
-    which cosmetic options to enable.</p>
+    <h2><span class="num">4.</span>Settings saved on your device</h2>
+    <p>To remember how you like to play, the app saves a few settings: language, light or dark
+    mode, color palette, card back design, sound on or off, timer shown or hidden, and the last
+    card theme, difficulty, and game mode you chose. They contain no personal information.</p>
+    <p>Only the <strong>game settings</strong> (sound, timer, card theme, difficulty, and game
+    mode) may be included in Android's <strong>automatic backup to your Google account</strong>,
+    so they come back if you reinstall the app or switch phones. That backup is run by Google
+    under your account; we cannot see or access it. You can turn it off in your phone's
+    settings. Language and appearance (light or dark mode, colors, card back) belong to each
+    device and are not backed up.</p>
 
-    <h2><span class="num">5.</span>Children</h2>
-    <p>Inveni was created especially for children. We comply with <strong>COPPA</strong>
-    (USA), <strong>GDPR</strong> (Europe), <strong>LGPD</strong> (Brazil), and the
-    <strong>Google Play Families Policy</strong>. Because we collect no data, no parental
-    consent is required. The purchase screen is placed behind a simple maths question so
-    that it is reached by an adult, not by a child.</p>
+    <h2><span class="num">5.</span>In-app purchase</h2>
+    <p>The app offers an optional one-time purchase ("Support") processed entirely by
+    <strong>Google Play Billing</strong>. It removes the support bar from the menu and unlocks
+    extra color palettes and card back designs. These are cosmetic only: the whole game is
+    playable without it.</p>
+    <p>No payment data passes through the app. We have no access to card details, account
+    information, or the buyer's identity. The app only asks Google Play whether this purchase
+    exists, to know which cosmetic options to turn on.</p>
 
-    <h2><span class="num">6.</span>Third-party services</h2>
-    <p>The app does not integrate any third-party SDKs for advertising, analytics, or
-    social networks.</p>
-    <p>The only external service is <strong>Google Play Billing</strong> (for the optional
-    purchase), subject to
+    <h2><span class="num">6.</span>Children</h2>
+    <p>Inveni is made for children. We follow <strong>COPPA</strong> (USA), the
+    <strong>GDPR</strong> (Europe), the <strong>LGPD</strong> (Brazil), and the
+    <strong>Google Play Families Policy</strong>. Because no data is collected, there is no
+    parental consent to obtain.</p>
+    <p>A <strong>grown-ups check</strong> comes before the purchase and before every link that
+    leaves the app. It asks for the result of a two-digit addition, typed in by hand. Each
+    wrong answer brings a new question, so it can't be passed by tapping at random.</p>
+
+    <h2><span class="num">7.</span>Third-party services and links</h2>
+    <p>The app does not include any third-party code for advertising, analytics, or social
+    networks.</p>
+    <p>The only external service is <strong>Google Play Billing</strong>, for the optional
+    purchase, which is covered by
     <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+    <p>The settings screen has two links, both behind the grown-ups check: this policy and our
+    profile on X (<a href="https://x.com/InveniApps">@InveniApps</a>). They open in your
+    browser. Once you are on another site, that site's own privacy policy applies.</p>
 
-    <h2><span class="num">7.</span>Security</h2>
-    <p>Because we collect no data, there is no database to protect. User photos and
-    settings are stored in the device's private internal storage, inaccessible to other
-    apps.</p>
+    <h2><span class="num">8.</span>Your choices</h2>
+    <ul>
+      <li>Delete a photo or a whole deck at any time from the app's deck screen.</li>
+      <li>Erase everything the app has saved in <strong>Android Settings › Apps › Inveni ›
+      Storage › Clear storage</strong>, or by uninstalling the app.</li>
+      <li>Since we hold no data about you, there is nothing to request or delete on our side.
+      You are still welcome to write to us with any question.</li>
+    </ul>
 
-    <h2><span class="num">8.</span>Changes to this policy</h2>
-    <p>If any change is made that involves data collection, this policy will be updated
-    and the revision date will be changed prior to publishing the new version.</p>
+    <h2><span class="num">9.</span>Security</h2>
+    <p>Since we collect no data, there is no database of yours to protect. Photos and settings
+    stay in the device's private storage, which other apps cannot access.</p>
 
-    <h2><span class="num">9.</span>Contact</h2>
-    <p>Questions? Get in touch:
-    <a href="mailto:inveniapps@gmail.com">inveniapps@gmail.com</a></p>
+    <h2><span class="num">10.</span>Changes to this policy</h2>
+    <p>When the app changes in a way that affects this policy, the text is updated and the
+    date at the top changes before the new version is published.</p>
+
+    <h2><span class="num">11.</span>Contact</h2>
+    <p>Questions? Write to
+    <a href="mailto:inveniapps@gmail.com">inveniapps@gmail.com</a>.</p>
   </main>
 
   <!-- ============ PORTUGUÊS ============ -->
-  <main id="doc-pt" hidden>
-    <h1 style="font-size:26px;font-weight:800;margin:0 0 6px;">Política de Privacidade</h1>
-    <p class="data">Última atualização: julho de 2026</p>
+  <main id="doc-pt" lang="pt-BR" hidden>
+    <h1 class="titulo-doc">Política de Privacidade</h1>
+    <p class="data">Última atualização: 23 de novembro de 2026</p>
 
     <div class="resumo">
-      O Inveni não coleta, armazena nem compartilha nenhum dado pessoal. Nunca.
+      <p>O Inveni não coleta, armazena nem compartilha nenhum dado pessoal.</p>
+      <ul>
+        <li>Sem contas, sem anúncios, sem analytics, sem rastreamento.</li>
+        <li>As fotos dos baralhos ficam no aparelho e não vão para backups na nuvem.</li>
+        <li>A compra e todo link que sai do app ficam atrás de uma verificação de adulto.</li>
+      </ul>
     </div>
 
     <h2><span class="num">1.</span>Quem somos</h2>
-    <p>Inveni — Jogo da Memória é desenvolvido de forma independente pela <strong>Inveni Apps</strong>,
-    sem fins comerciais além do apoio voluntário descrito abaixo.</p>
+    <p>Inveni — Jogo da Memória é desenvolvido pela <strong>Inveni Apps</strong>. O jogo é
+    gratuito, não tem anúncios e se sustenta apenas pela compra opcional descrita na
+    seção&nbsp;5.</p>
 
     <h2><span class="num">2.</span>Dados coletados</h2>
-    <p>Este app <strong>não coleta nenhum dado pessoal</strong> de nenhum usuário,
-    incluindo crianças. Especificamente:</p>
+    <p>O app <strong>não coleta nenhum dado pessoal</strong> de ninguém, incluindo crianças:</p>
     <ul>
-      <li>Não criamos contas de usuário.</li>
-      <li>Não coletamos nome, e-mail, localização, idade nem nenhuma outra informação pessoal.</li>
-      <li>Não usamos câmera, microfone nem acesso a contatos.</li>
-      <li>Não usamos cookies, analytics, SDKs de rastreamento nem publicidade.</li>
-      <li>Não enviamos nenhum dado para servidores externos.</li>
+      <li>Não há contas de usuário.</li>
+      <li>Não coletamos nome, e-mail, localização, idade nem qualquer outra informação pessoal.</li>
+      <li>O app não tem publicidade, analytics nem ferramentas de rastreamento.</li>
+      <li>O app não envia nada para nós. Não temos servidores.</li>
     </ul>
-    <p>As fotos adicionadas nos baralhos personalizados ficam <strong>somente no aparelho
-    do usuário</strong>, em armazenamento privado do app, e são apagadas junto com o app
-    caso ele seja desinstalado. Essas fotos nunca saem do aparelho.</p>
 
-    <h2><span class="num">3.</span>Preferências salvas no aparelho</h2>
-    <p>Para lembrar como você gosta de jogar, o app guarda algumas preferências no seu
-    próprio armazenamento privado no aparelho: idioma escolhido, modo claro ou escuro,
-    paleta de cores, verso das cartas, som ligado ou desligado, e a última dificuldade e
-    modo de jogo selecionados. São ajustes simples, não contêm nenhuma informação
-    pessoal, nunca são transmitidos a lugar nenhum e são apagados quando o app é
-    desinstalado.</p>
+    <h2><span class="num">3.</span>Fotos nos baralhos personalizados</h2>
+    <p>Você pode montar baralhos com suas próprias fotos. Funciona assim:</p>
+    <ul>
+      <li>As fotos são escolhidas pelo <strong>seletor de fotos do sistema</strong> Android. O
+      app recebe só as fotos que você escolhe e não tem permissão para navegar na sua galeria.</li>
+      <li>Cada foto é recortada em quadrado e salva como uma cópia no <strong>armazenamento
+      privado</strong> do app, no aparelho. Outros apps não conseguem lê-la.</li>
+      <li>As fotos <strong>não são enviadas para nós</strong> e <strong>não entram</strong> no
+      backup automático do Android para a sua conta Google.</li>
+      <li>A única exceção: se você passar seus dados para um celular novo pela
+      <strong>transferência direta entre aparelhos</strong> do Android (cabo ou conexão local),
+      os baralhos vão junto, para você não perdê-los. Nada passa pela internet nem por nós.</li>
+      <li>As fotos são apagadas quando você as remove do baralho, exclui o baralho, limpa os
+      dados do app ou desinstala o app.</li>
+    </ul>
 
-    <h2><span class="num">4.</span>Compras no app</h2>
-    <p>O app oferece uma compra única opcional ("Apoiar o projeto") processada
-    exclusivamente pelo <strong>Google Play Billing</strong>. Ela remove a barra de apoio
-    do menu e libera paletas de cores e versos de cartas adicionais — itens puramente
-    cosméticos. Nenhuma parte do jogo em si fica bloqueada por trás dela.</p>
-    <p>Nenhum dado de pagamento passa pelo app — tudo é gerenciado pelo próprio Google
-    Play. Não temos acesso a dados de cartão, conta ou identidade do comprador. O app
-    apenas pergunta ao Google Play se essa compra existe, para saber quais opções
-    cosméticas deve habilitar.</p>
+    <h2><span class="num">4.</span>Preferências salvas no aparelho</h2>
+    <p>Para lembrar como você gosta de jogar, o app guarda algumas preferências: idioma, modo
+    claro ou escuro, paleta de cores, verso das cartas, som ligado ou desligado, cronômetro
+    visível ou escondido, e o último tema de cartas, dificuldade e modo de jogo escolhidos.
+    Elas não contêm nenhuma informação pessoal.</p>
+    <p>Só as <strong>preferências do jogo</strong> (som, cronômetro, tema das cartas,
+    dificuldade e modo de jogo) podem entrar no <strong>backup automático do Android para a
+    conta Google</strong>, para que voltem se você reinstalar o app ou trocar de celular. Esse
+    backup é feito pelo Google na sua conta; nós não temos como vê-lo nem acessá-lo. Você pode
+    desligá-lo nas configurações do celular. Idioma e aparência (modo claro ou escuro, cores,
+    verso das cartas) são de cada aparelho e não entram no backup.</p>
 
-    <h2><span class="num">5.</span>Crianças</h2>
-    <p>O Inveni foi criado especialmente para crianças. Cumprimos a <strong>COPPA</strong>
-    (EUA), o <strong>GDPR</strong> (Europa), a <strong>LGPD</strong> (Brasil) e a
-    <strong>Política para Famílias do Google Play</strong>. Como não coletamos nenhum
-    dado, não há consentimento parental a ser obtido. A tela de compra fica atrás de uma
-    continha simples, para que seja alcançada por um adulto e não por uma criança.</p>
+    <h2><span class="num">5.</span>Compra no app</h2>
+    <p>O app oferece uma compra única opcional ("Apoiar") processada inteiramente pelo
+    <strong>Google Play Billing</strong>. Ela remove a barra de apoio do menu e libera paletas
+    de cores e versos de cartas extras. São itens só cosméticos: o jogo inteiro funciona sem
+    ela.</p>
+    <p>Nenhum dado de pagamento passa pelo app. Não temos acesso a dados de cartão, conta ou
+    identidade de quem compra. O app só pergunta ao Google Play se essa compra existe, para
+    saber quais opções cosméticas liberar.</p>
 
-    <h2><span class="num">6.</span>Serviços de terceiros</h2>
-    <p>O app não integra nenhum SDK de terceiros para publicidade, analytics ou redes
-    sociais.</p>
-    <p>O único serviço externo é o <strong>Google Play Billing</strong> (para a compra
-    opcional), sujeito à
-    <a href="https://policies.google.com/privacy">Política de Privacidade do Google</a>.</p>
+    <h2><span class="num">6.</span>Crianças</h2>
+    <p>O Inveni é feito para crianças. Seguimos a <strong>COPPA</strong> (EUA), o
+    <strong>GDPR</strong> (Europa), a <strong>LGPD</strong> (Brasil) e a <strong>Política para
+    Famílias do Google Play</strong>. Como nenhum dado é coletado, não há consentimento parental
+    a obter.</p>
+    <p>Uma <strong>verificação de adulto</strong> aparece antes da compra e antes de todo link
+    que sai do app. Ela pede o resultado de uma soma de números de dois dígitos, digitado à
+    mão. Cada resposta errada traz uma conta nova, então não dá para passar tocando ao acaso.</p>
 
-    <h2><span class="num">7.</span>Segurança</h2>
-    <p>Como não coletamos dados, não há base de dados para proteger. As fotos e as
-    preferências do usuário ficam no armazenamento interno privado do aparelho,
-    inacessível a outros apps.</p>
+    <h2><span class="num">7.</span>Serviços de terceiros e links</h2>
+    <p>O app não inclui nenhum código de terceiros para publicidade, analytics ou redes sociais.</p>
+    <p>O único serviço externo é o <strong>Google Play Billing</strong>, para a compra opcional,
+    regido pela <a href="https://policies.google.com/privacy">Política de Privacidade do
+    Google</a>.</p>
+    <p>A tela de configurações tem dois links, ambos atrás da verificação de adulto: esta
+    política e nosso perfil no X (<a href="https://x.com/InveniApps">@InveniApps</a>). Eles
+    abrem no navegador. Fora do app, vale a política de privacidade do site visitado.</p>
 
-    <h2><span class="num">8.</span>Alterações nesta política</h2>
-    <p>Se houver qualquer mudança que implique coleta de dados, esta política será
-    atualizada e a data de revisão será alterada antes da publicação da nova versão.</p>
+    <h2><span class="num">8.</span>Suas escolhas</h2>
+    <ul>
+      <li>Apague uma foto ou um baralho inteiro quando quiser, na tela de baralhos do app.</li>
+      <li>Apague tudo o que o app guardou em <strong>Configurações do Android › Apps › Inveni ›
+      Armazenamento › Limpar armazenamento</strong>, ou desinstalando o app.</li>
+      <li>Como não guardamos nenhum dado seu, não há nada a pedir nem a apagar do nosso lado.
+      Mesmo assim, escreva para nós se tiver qualquer dúvida.</li>
+    </ul>
 
-    <h2><span class="num">9.</span>Contato</h2>
-    <p>Dúvidas? Entre em contato:
-    <a href="mailto:inveniapps@gmail.com">inveniapps@gmail.com</a></p>
+    <h2><span class="num">9.</span>Segurança</h2>
+    <p>Como não coletamos dados, não existe base de dados sua para proteger. Fotos e
+    preferências ficam no armazenamento privado do aparelho, que outros apps não acessam.</p>
+
+    <h2><span class="num">10.</span>Alterações nesta política</h2>
+    <p>Quando o app mudar de um jeito que afete esta política, o texto é atualizado e a data no
+    topo muda antes da publicação da nova versão.</p>
+
+    <h2><span class="num">11.</span>Contato</h2>
+    <p>Dúvidas? Escreva para
+    <a href="mailto:inveniapps@gmail.com">inveniapps@gmail.com</a>.</p>
   </main>
 
   <footer>
@@ -354,12 +429,28 @@
         : 'Privacy Policy — Inveni: Memory Game';
     }
 
-    btnEn.addEventListener('click', function () { aplicar('en'); });
-    btnPt.addEventListener('click', function () { aplicar('pt'); });
+    function escolher(idioma) {
+      aplicar(idioma);
+      // Atualiza o endereço (#pt / #en) para o link copiado abrir no mesmo idioma.
+      // Nada é guardado no aparelho.
+      if (history.replaceState) history.replaceState(null, '', '#' + idioma);
+    }
 
-    // Abre no idioma do navegador (sem armazenar nada no dispositivo).
-    var nav = (navigator.language || 'en').toLowerCase();
-    aplicar(nav.indexOf('pt') === 0 ? 'pt' : 'en');
+    btnEn.addEventListener('click', function () { escolher('en'); });
+    btnPt.addEventListener('click', function () { escolher('pt'); });
+
+    // Ordem: #pt/#en ou ?lang= no link > idioma do navegador > inglês.
+    var hash = (location.hash || '').replace('#', '').toLowerCase();
+    var param = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+    var pedido = hash || param;
+    if (pedido.indexOf('pt') === 0) {
+      aplicar('pt');
+    } else if (pedido.indexOf('en') === 0) {
+      aplicar('en');
+    } else {
+      var nav = (navigator.language || 'en').toLowerCase();
+      aplicar(nav.indexOf('pt') === 0 ? 'pt' : 'en');
+    }
   })();
 </script>
 
